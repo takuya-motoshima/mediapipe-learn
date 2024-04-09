@@ -1,8 +1,10 @@
 # MediaPipe Learn
 
-<!-- This is the learning result of MediaPipe.  
-Check out the latest MediaPipe browser demo here.  
-The code for those browser demos can be found here.   -->
+This is the learning result of MediaPipe.   
+Check out the latest MediaPipe browser demo [here](https://takuya-motoshima.github.io/mediapipe-learn/).    
+The code for those browser demos can be found [here](https://github.com/takuya-motoshima/mediapipe-learn/tree/main/docs).  
+
+![screencaps/docs.jpg](screencaps/docs.jpg)
 
 ## Overview
 - What is MediaPipe?  
