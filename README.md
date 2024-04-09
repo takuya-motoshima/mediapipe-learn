@@ -92,3 +92,13 @@ docker-compose up -d
 - [Face Detection Sample from Video](https://developers.google.com/mediapipe/solutions/vision/face_detector/web_js#video)
 - [Sample of face detection from image/video (CodePen)](https://codepen.io/mediapipe-preview/pen/OJByWQr)
 <!-- - [Detailed description of the BlazeFace model (Japanese)](https://medium.com/axinc/blazeface-%E9%A1%94%E3%81%AE%E4%BD%8D%E7%BD%AE%E3%81%A8%E3%82%AD%E3%83%BC%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%82%92%E9%AB%98%E9%80%9F%E3%81%AB%E6%A4%9C%E5%87%BA%E3%81%99%E3%82%8B%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%E3%83%A2%E3%83%87%E3%83%AB-e851c348a32b) -->
+
+## Author
+**Takuya Motoshima**
+
+* [github/takuya-motoshima](https://github.com/takuya-motoshima)
+* [twitter/TakuyaMotoshima](https://twitter.com/TakuyaMotoshima)
+* [facebook/takuya.motoshima.7](https://www.facebook.com/takuya.motoshima.7)
+
+## License
+[MIT](LICENSE)
