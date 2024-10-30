@@ -1,0 +1,40 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  background-color: #000;
+}
+
+/* Optional Images */
+.tp-thumbv_sthmb {
+  background-size: cover !important;
+  background-repeat: no-repeat;
+}
+
+.video-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+  .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .canvas {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }

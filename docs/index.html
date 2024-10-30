@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Index - MediaPipe Learn</title>
-  <link rel="shortcut icon" type="image/svg+xml" href="img/logos/logo.svg" />
+  <link rel="shortcut icon" type="image/svg+xml" href="img/logos/logo.svg">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="docs.css">
+  <style>
+    .img-thumbnail {
+      width: 480px;
+      height: 300px;
+      object-fit: contain;
+      /* background: #000; */
+      border: none;
+    }
+  </style>
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -82,17 +91,32 @@
         <div class="col-sm-6 col-md-3 mb-3">
           <a class="d-block link-offset-1" href="face_detection_image.html">
             <img class="img-thumbnail mb-3" src="img/demos/face_detection_image.jpg" width="480" height="300" loading="lazy">
-            <h3 class="h5 mb-1">Face detection (image)</h3>
+            <h3 class="h5 mb-1">Face detection from image</h3>
           </a>
-          <p class="text-body-secondary">Detects faces from images using the BlazeFace model.</p>
+          <!-- <p class="text-body-secondary"></p> -->
         </div>
         <div class="col-sm-6 col-md-3 mb-3">
           <a class="d-block link-offset-1" href="face_detection_video.html">
             <img class="img-thumbnail mb-3" src="img/demos/face_detection_video_landscape.gif" width="480" height="300" loading="lazy">
             <!-- <img class="img-thumbnail mb-3" src="img/demos/face_detection_video_portrait.gif" width="480" height="300" loading="lazy"> -->
-            <h3 class="h5 mb-1">Face detection (video)</h3>
+            <h3 class="h5 mb-1">Face detection from video</h3>
           </a>
-          <p class="text-body-secondary">Detects faces from video using the BlazeFace model.</p>
+          <!-- <p class="text-body-secondary"></p> -->
+        </div>
+        <div class="col-sm-6 col-md-3 mb-3">
+          <a class="d-block link-offset-1" href="object_detection_image.html">
+            <img class="img-thumbnail mb-3" src="img/demos/object_detection_image.jpg" width="480" height="300" loading="lazy">
+            <h3 class="h5 mb-1">Object detection from image</h3>
+          </a>
+          <!-- <p class="text-body-secondary"></p> -->
+        </div>
+        <div class="col-sm-6 col-md-3 mb-3">
+          <a class="d-block link-offset-1" href="object_detection_webcam.html">
+            <img class="img-thumbnail mb-3" src="#!" width="480" height="300" loading="lazy">
+            <img class="img-thumbnail mb-3" src="img/demos/object_detection_webcam.gif" width="480" height="300" loading="lazy">
+            <h3 class="h5 mb-1">Object detection from webcam</h3>
+          </a>
+          <!-- <p class="text-body-secondary"></p> -->
         </div>
       </div>
     </div>

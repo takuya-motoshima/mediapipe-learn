@@ -1,36 +1,33 @@
 import FaceDetector from './core/FaceDetector.js';
-import initFaceDetectorVideoPane from './core/initFaceDetectorVideoPane.js';
+import initFaceDetectorPane from './core/initFaceDetectorPane.js';
 
 (async () => {
   /**
    * Repeated face detection.
    */
   const renderLoop = () => {
-    // Face detection.
-    faceDetector.detectFaces();
+    // Detect.
+    detector.detect();
 
     // Repeat face detection.
     requestId = requestAnimationFrame(renderLoop);
   }
 
   // Initialize Pane.
-  const {_, options} = initFaceDetectorVideoPane(async evnt => {
-    if (!evnt.last)
-      return;
-
+  const options = initFaceDetectorPane('video', async () => {
     // Clear the canvas.
-    faceDetector.clearCanvas();
+    detector.clearCanvas();
 
     // Stop repeated detection.
     cancelAnimationFrame(requestId)
 
     // Change the sample.
-    faceDetector.mediaElement.src = options.video.value;
+    detector.mediaElement.src = options.video.value;
 
     // Video loaded event.
-    faceDetector.mediaElement.addEventListener('loadeddata', async () => {
-      // Update face detector options.
-      await faceDetector.updateOptions({
+    detector.mediaElement.addEventListener('loadeddata', async () => {
+      // Update detector options.
+      await detector.updateOptions({
         delegate: options.delegate,
         minDetectionConfidence: options.minDetectionConfidence,
       });
@@ -43,22 +40,22 @@ import initFaceDetectorVideoPane from './core/initFaceDetectorVideoPane.js';
   // Request ID.
   let requestId;
 
-  // New instance of the face detector.
-  const faceDetector = new FaceDetector(document.getElementById('video'), document.getElementById('canvas'), {
+  // New instance of the detector.
+  const detector = new FaceDetector(document.getElementById('video'), document.getElementById('canvas'), {
     delegate: options.delegate,
     runningMode: 'VIDEO',
     minDetectionConfidence: options.minDetectionConfidence,
   });
 
-  // Initialize face detector.
-  await faceDetector.init();
+  // Initialize detector.
+  await detector.init();
 
   // Video loaded event.
-  faceDetector.mediaElement.addEventListener('loadeddata', () => {
+  detector.mediaElement.addEventListener('loadeddata', () => {
     // Start detecting faces repeatedly.
     renderLoop();
   }, {once: true});
 
   // Explicitly load video in case the loadeddata event does not fire.
-  faceDetector.mediaElement.load();
+  detector.mediaElement.load();
 })();

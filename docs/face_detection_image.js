@@ -1,41 +1,38 @@
 import FaceDetector from './core/FaceDetector.js';
-import initFaceDetectorImagePane from './core/initFaceDetectorImagePane.js';
+import initFaceDetectorPane from './core/initFaceDetectorPane.js';
 
 (async () => {
   // Initialize Pane.
-  const {_, options} = initFaceDetectorImagePane(async evnt => {
-    if (!evnt.last)
-      return;
-
+  const options = initFaceDetectorPane('image', async () => {
     // Clear the canvas.
-    faceDetector.clearCanvas();
+    detector.clearCanvas();
 
     // Change the sample.
-    faceDetector.mediaElement.src = options.image.src;
+    detector.mediaElement.src = options.image.src;
 
     // Wait until the sample is loaded.
     await new Promise(resolve => image.onload = resolve);
 
-    // Update face detector options.
-    await faceDetector.updateOptions({
+    // Update detector options.
+    await detector.updateOptions({
       delegate: options.delegate,
       minDetectionConfidence: options.minDetectionConfidence,
     });
 
-    // Face detection.
-    faceDetector.detectFaces();
+    // Detect.
+    detector.detect();
   });
 
-  // New instance of the face detector.
-  const faceDetector = new FaceDetector(document.getElementById('image'), document.getElementById('canvas'), {
+  // New instance of the detector.
+  const detector = new FaceDetector(document.getElementById('image'), document.getElementById('canvas'), {
     delegate: options.delegate,
     runningMode: 'IMAGE',
     minDetectionConfidence: options.minDetectionConfidence,
   });
 
-  // Initialize face detector.
-  await faceDetector.init();
+  // Initialize detector.
+  await detector.init();
 
-  // Face detection.
-  faceDetector.detectFaces();
+  // Detect.
+  detector.detect();
 })();
